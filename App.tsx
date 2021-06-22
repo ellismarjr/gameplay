@@ -10,6 +10,7 @@ import {
 
 import { StatusBar } from 'react-native';
 import { SignIn } from './src/pages/SignIn';
+import { Background } from './src/components/Background';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -23,13 +24,13 @@ export default function App() {
     return <AppLoading />;
   }
   return (
-    <>
+    <Background>
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
         translucent
       />
       <SignIn />
-    </>
+    </Background>
   );
 }
