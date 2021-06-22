@@ -8,6 +8,7 @@ import {
   Rajdhani_700Bold,
 } from '@expo-google-fonts/rajdhani';
 
+import { StatusBar } from 'react-native';
 import { SignIn } from './src/pages/SignIn';
 
 export default function App() {
@@ -21,5 +22,14 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
-  return <SignIn />;
+  return (
+    <>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      <SignIn />
+    </>
+  );
 }
