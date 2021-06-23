@@ -85,7 +85,10 @@ export function Home() {
       />
 
       <View style={styles.content}>
-        <ListHeader title="Partidas agendadas" subtitle="subtitle" />
+        <ListHeader
+          title="Partidas agendadas"
+          subtitle={String(appointments.length)}
+        />
 
         <FlatList
           data={appointments}
