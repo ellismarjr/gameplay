@@ -53,7 +53,8 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
-    "camelcase":"off"
+    "camelcase": "off",
+    "react/require-default-props": "off"
   },
   "settings": {
     "import/resolver": {
