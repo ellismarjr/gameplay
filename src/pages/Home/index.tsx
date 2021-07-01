@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useState, useCallback } from 'react';
+
 import { FlatList, View } from 'react-native';
 import { Appointment } from '../../components/Appointment';
 import { Background } from '../../components/Background';
@@ -12,6 +14,7 @@ import { Profile } from '../../components/Profile';
 import { styles } from './styles';
 
 export function Home() {
+  const navigation = useNavigation();
   const [category, setCategory] = useState('');
 
   const appointments = [
@@ -73,11 +76,15 @@ export function Home() {
     setCategory(categoryId === category ? '' : categoryId);
   }
 
+  const handeNavigateToNewAppointment = useCallback(() => {
+    navigation.navigate('AppointmentDetails');
+  }, [navigation]);
+
   return (
     <Background>
       <View style={styles.header}>
         <Profile />
-        <ButtonAdd />
+        <ButtonAdd onPress={handeNavigateToNewAppointment} />
       </View>
 
       <CategorySelect
