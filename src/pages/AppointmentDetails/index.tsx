@@ -13,6 +13,7 @@ import { theme } from '../../global/styles/theme';
 import bannerImage from '../../assets/banner.png';
 import { styles } from './styles';
 import { ListDivider } from '../../components/ListDivider';
+import { ButtonIcon } from '../../components/ButtonIcon';
 
 export function AppointmentDetails() {
   const members = [
@@ -57,6 +58,10 @@ export function AppointmentDetails() {
         ItemSeparatorComponent={() => <ListDivider />}
         style={styles.members}
       />
+
+      <View style={styles.footer}>
+        <ButtonIcon title="Entrar na partida" />
+      </View>
     </Background>
   );
 }
