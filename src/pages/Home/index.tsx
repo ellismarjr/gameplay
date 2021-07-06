@@ -76,15 +76,19 @@ export function Home() {
     setCategory(categoryId === category ? '' : categoryId);
   }
 
-  const handeNavigateToNewAppointment = useCallback(() => {
+  const handeAppointmentDetails = useCallback(() => {
     navigation.navigate('AppointmentDetails');
+  }, [navigation]);
+
+  const handeAppointmentCreate = useCallback(() => {
+    navigation.navigate('AppointmentCreate');
   }, [navigation]);
 
   return (
     <Background>
       <View style={styles.header}>
         <Profile />
-        <ButtonAdd onPress={handeNavigateToNewAppointment} />
+        <ButtonAdd onPress={handeAppointmentCreate} />
       </View>
 
       <CategorySelect
