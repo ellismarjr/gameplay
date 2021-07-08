@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
   Text,
   View,
@@ -36,6 +36,10 @@ export function AppointmentCreate() {
     setGuildSelected(guildSelect);
     setOpenGuildsModal(false);
   }
+
+  const handleCloseGuildsModal = useCallback(() => {
+    setOpenGuildsModal(false);
+  }, []);
 
   return (
     <KeyboardAvoidingView
@@ -119,7 +123,7 @@ export function AppointmentCreate() {
         </View>
       </ScrollView>
 
-      <ModalView visible={openGuildsModal}>
+      <ModalView visible={openGuildsModal} closeModal={handleCloseGuildsModal}>
         <Guilds handleGuildSelect={handleGuildSelect} />
       </ModalView>
     </KeyboardAvoidingView>
