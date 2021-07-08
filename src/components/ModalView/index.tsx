@@ -20,6 +20,7 @@ export function ModalView({ children, closeModal, ...rest }: ModalViewProps) {
     <Modal
       transparent
       animationType="slide"
+      statusBarTranslucent
       {...rest}
       onRequestClose={closeModal}
     >
