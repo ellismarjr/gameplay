@@ -11,16 +11,16 @@ import { GuildIcon } from '../GuildIcon';
 import { styles } from './styles';
 import { theme } from '../../global/styles/theme';
 
-export type GuildProps = {
+export type GuildData = {
   id: string;
   name: string;
-  icon: null;
+  icon: string | null;
   owner: boolean;
 };
 
 export type AppointmentData = {
   id: string;
-  guild: GuildProps;
+  guild: GuildData;
   category: string;
   date: string;
   description: string;

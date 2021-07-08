@@ -16,7 +16,7 @@ import { SmallInput } from '../../components/SmallInput';
 import { TextArea } from '../../components/TextArea';
 import { Button } from '../../components/Button';
 import { ModalView } from '../../components/ModalView';
-import { GuildProps } from '../../components/Appointment';
+import { GuildData } from '../../components/Appointment';
 import { Background } from '../../components/Background';
 import { Guilds } from '../Guilds';
 
@@ -27,13 +27,13 @@ import { styles } from './styles';
 export function AppointmentCreate() {
   const [category, setCategory] = useState('');
   const [openGuildsModal, setOpenGuildsModal] = useState(false);
-  const [guildSelected, setGuildSelected] = useState<GuildProps>();
+  const [guildSelected, setGuildSelected] = useState<GuildData>();
 
   function handleOpenGuildsModal() {
     setOpenGuildsModal(true);
   }
 
-  function handleGuildSelect(guildSelect: GuildProps) {
+  function handleGuildSelect(guildSelect: GuildData) {
     setGuildSelected(guildSelect);
     setOpenGuildsModal(false);
   }

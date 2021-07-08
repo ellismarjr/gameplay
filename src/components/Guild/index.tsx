@@ -8,15 +8,10 @@ import {
 import { Feather } from '@expo/vector-icons';
 import { GuildIcon } from '../GuildIcon';
 
+import { GuildData } from '../Appointment';
+
 import { styles } from './styles';
 import { theme } from '../../global/styles/theme';
-
-type GuildData = {
-  id: string;
-  name: string;
-  icon: string | null;
-  owner: boolean;
-};
 
 type GuildProps = TouchableOpacityProps & {
   data: GuildData;
