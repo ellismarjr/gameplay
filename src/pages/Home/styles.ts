@@ -20,5 +20,6 @@ export const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 24,
     marginLeft: 24,
+    paddingBottom: 69,
   },
 });
