@@ -38,6 +38,10 @@ export function AppointmentCreate() {
     setOpenGuildsModal(false);
   }
 
+  const handleCategorySelect = useCallback((categoryId: string) => {
+    setCategory(categoryId);
+  }, []);
+
   const handleCloseGuildsModal = useCallback(() => {
     setOpenGuildsModal(false);
   }, []);
@@ -62,7 +66,7 @@ export function AppointmentCreate() {
 
           <CategorySelect
             hasCheckBox
-            setCategory={setCategory}
+            setCategory={handleCategorySelect}
             categorySelected={category}
           />
 
