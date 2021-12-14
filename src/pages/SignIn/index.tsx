@@ -7,12 +7,18 @@ import { ButtonIcon } from '../../components/ButtonIcon';
 import { Background } from '../../components/Background';
 
 import { styles } from './styles';
+import { useAuth } from '../../hooks/AuthContext';
 
 export function SignIn() {
   const navigation = useNavigation();
+  const { signIn } = useAuth();
 
-  function handleSignIn() {
-    navigation.navigate('Home');
+  async function handleSignIn() {
+    try {
+      await signIn();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
